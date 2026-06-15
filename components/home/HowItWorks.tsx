@@ -120,7 +120,7 @@ export default function HowItWorks() {
 
       {/* STATIC LEFT OVERLAY */}
       <div className="hidden lg:flex absolute inset-0 z-10 pointer-events-none flex-col justify-center">
-        <div className="max-w-[90rem] mx-auto w-full px-12">
+        <div className="max-w-7xl mx-auto w-full px-6">
           
           <div className="mb-12 pointer-events-auto">
             <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#E30613] block mb-3">
@@ -181,41 +181,54 @@ export default function HowItWorks() {
       >
         {LAYERS.map((layer) => (
           <div key={layer.id} className="w-full h-full snap-center flex flex-col justify-center">
-            <div className="max-w-[90rem] mx-auto w-full px-12 grid grid-cols-12 gap-16 items-center">
-              <div className="col-span-5" /> {/* Spacer for left menu */}
+            <div className="max-w-7xl mx-auto w-full px-6">
               
-              <div className="col-span-7">
-                <div className="bg-white dark:bg-[#151515] p-12 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-gray-50 dark:border-white/5 flex flex-col min-h-[420px]">
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="w-12 h-12 rounded-2xl bg-[#E30613] flex items-center justify-center text-white shadow-md shadow-[#E30613]/20">
-                      <Cpu size={24} strokeWidth={2} />
-                    </div>
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#E30613] block mb-0.5">Active Subsystem</span>
-                      <span className="text-[13px] font-bold text-gray-900 dark:text-white uppercase tracking-wider">{layer.title}</span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4 mb-8">
-                    <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-tight">
-                      {layer.techTitle}
-                    </h3>
-                    <p className="text-gray-500 dark:text-gray-400 font-light text-[16px] leading-relaxed max-w-2xl">
-                      {layer.desc}
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-100 dark:border-white/5 mt-auto">
-                    {layer.specs.map((spec, i) => (
-                      <div key={i} className="relative pl-4 border-l-2 border-[#E30613]">
-                        <p className="text-[9px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-[0.15em] mb-1.5">{spec.label}</p>
-                        <p className="text-lg font-extrabold text-gray-900 dark:text-white tracking-tight">{spec.value}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              {/* Invisible spacer to match the left-side title height */}
+              <div className="mb-12 opacity-0 select-none pointer-events-none" aria-hidden="true">
+                <span className="text-[11px] font-bold tracking-[0.15em] uppercase block mb-3">
+                  Architectural Layer Explorer
+                </span>
+                <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight leading-tight">
+                  Interactive <span className="italic font-medium">Subsystem Explorer</span>
+                </h2>
               </div>
 
+              <div className="grid grid-cols-12 gap-16 items-start">
+                <div className="col-span-5" /> {/* Spacer for left menu */}
+                
+                <div className="col-span-7">
+                  <div className="bg-white dark:bg-[#151515] p-12 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-gray-50 dark:border-white/5 flex flex-col min-h-[420px]">
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="w-12 h-12 rounded-2xl bg-[#E30613] flex items-center justify-center text-white shadow-md shadow-[#E30613]/20">
+                        <Cpu size={24} strokeWidth={2} />
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#E30613] block mb-0.5">Active Subsystem</span>
+                        <span className="text-[13px] font-bold text-gray-900 dark:text-white uppercase tracking-wider">{layer.title}</span>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4 mb-8">
+                      <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-tight">
+                        {layer.techTitle}
+                      </h3>
+                      <p className="text-gray-500 dark:text-gray-400 font-light text-[16px] leading-relaxed max-w-2xl">
+                        {layer.desc}
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-100 dark:border-white/5 mt-auto">
+                      {layer.specs.map((spec, i) => (
+                        <div key={i} className="relative pl-4 border-l-2 border-[#E30613]">
+                          <p className="text-[9px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-[0.15em] mb-1.5">{spec.label}</p>
+                          <p className="text-lg font-extrabold text-gray-900 dark:text-white tracking-tight">{spec.value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         ))}

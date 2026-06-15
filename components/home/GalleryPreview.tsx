@@ -38,7 +38,7 @@ export default function GalleryPreview() {
       <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full bg-[#E30613]/[0.03] blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-20">
           <div className="space-y-4">
@@ -86,27 +86,27 @@ export default function GalleryPreview() {
                 className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
 
-              {/* Dark overlay mask */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 opacity-75 group-hover:opacity-85 transition-opacity duration-300" />
+              {/* Light overlay mask */}
+              <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/50 to-white/10 opacity-85 group-hover:opacity-95 transition-opacity duration-300" />
 
               {/* Info Block overlay */}
               <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
-                <span className="text-[9px] font-heading font-extrabold uppercase tracking-[0.2em] text-[#E30613] bg-[#E30613]/15 px-4.5 py-2 rounded-full border border-[#E30613]/35 w-fit backdrop-blur-md">
+                <span className="text-[9px] font-heading font-extrabold uppercase tracking-[0.2em] text-black bg-white/80 px-4.5 py-2 rounded-full border border-black/10 w-fit backdrop-blur-md">
                   {item.category}
                 </span>
 
                 <div className="space-y-4">
                   <div className="space-y-1">
-                    <p className="text-[10px] font-sans text-gray-400 uppercase tracking-widest">{item.specs}</p>
-                    <h3 className="text-xl font-heading font-extrabold text-white tracking-wide leading-none">
+                    <p className="text-[10px] font-sans text-black/60 uppercase tracking-widest">{item.specs}</p>
+                    <h3 className="text-xl font-heading font-extrabold text-black tracking-wide leading-none">
                       {item.title}
                     </h3>
                   </div>
 
                   {/* Trigger tag */}
-                  <div className="flex items-center gap-2.5 text-xs font-semibold text-white uppercase tracking-wider opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-300 font-sans">
-                    <span className="w-8 h-8 rounded-full bg-[#E30613]/35 border border-[#E30613]/45 flex items-center justify-center">
-                      <Eye size={14} className="text-[#E30613]" />
+                  <div className="flex items-center gap-2.5 text-xs font-semibold text-black uppercase tracking-wider opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-300 font-sans">
+                    <span className="w-8 h-8 rounded-full bg-black/5 border border-black/10 flex items-center justify-center">
+                      <Eye size={14} className="text-black" />
                     </span>
                     <span>Explore</span>
                   </div>

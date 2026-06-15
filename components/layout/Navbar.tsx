@@ -153,26 +153,24 @@ const Navbar = () => {
       </header>
 
       {/* ─── MOBILE NAVBAR ─── */}
-      <header className="fixed top-0 left-0 right-0 z-50 lg:hidden flex justify-center pointer-events-none">
+      <header className="fixed top-4 left-4 right-4 z-50 lg:hidden flex justify-center pointer-events-none">
         <motion.div
-          initial={{ y: -50 }}
-          animate={{ y: 0 }}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
           /* Mobile top bar is ALWAYS WHITE to keep the logo perfectly visible */
-          className="pointer-events-auto w-full h-24 flex items-center justify-between rounded-b-[2.5rem] px-6 shadow-sm bg-white"
+          className="pointer-events-auto w-full h-20 flex items-center justify-between rounded-full px-6 shadow-lg bg-white border border-black/5"
         >
           {/* Mobile Logo Area */}
           <Link 
             href="/" 
-            className={`flex items-center transition-all duration-300 rounded-[0.75rem] px-3 py-1.5 ${
-              isDark ? "bg-white shadow-sm" : "bg-transparent"
-            }`}
+            className="flex items-center transition-all duration-300 bg-transparent hover:scale-105"
           >
             <Image 
               src="/logo2.png" 
               alt="Brighttech Solar Logo" 
-              width={145}
-              height={38}
+              width={130}
+              height={34}
               className="object-contain"
               priority
             />
@@ -180,11 +178,11 @@ const Navbar = () => {
 
           {/* Right: theme + hamburger */}
           <div className="flex items-center gap-5">
-            <button onClick={toggleTheme} aria-label="Toggle Theme" className="text-gray-500">
-              {isDark ? <Sun size={22} /> : <Moon size={22} />}
+            <button onClick={toggleTheme} aria-label="Toggle Theme" className="text-gray-500 hover:scale-110 transition-transform">
+              {isDark ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            <button onClick={() => setIsOpen(!isOpen)} aria-label="Menu" className="text-[#1a1a2e]">
-              {isOpen ? <X size={26} /> : <Menu size={26} />}
+            <button onClick={() => setIsOpen(!isOpen)} aria-label="Menu" className="text-[#1a1a2e] hover:scale-110 transition-transform">
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </motion.div>
@@ -197,7 +195,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className={`fixed inset-x-4 top-[110px] z-40 rounded-[2rem] shadow-2xl lg:hidden overflow-hidden ${isDark ? "bg-white border border-black/10" : "bg-[#111827] border border-white/10"}`}
+            className={`fixed inset-x-4 top-[104px] z-40 rounded-[2rem] shadow-2xl lg:hidden overflow-hidden ${isDark ? "bg-white border border-black/10" : "bg-[#111827] border border-white/10"}`}
           >
             <nav className="flex flex-col p-4 gap-1">
               {NAV_LINKS.map((link) => {
