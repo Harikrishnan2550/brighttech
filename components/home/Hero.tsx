@@ -12,48 +12,48 @@ import {
 const SLIDES = [
   {
     src: "/images/luxury_solar_villa.png",
-    alt: "Luxury solar villa estate",
-    name: "Luxury Solar Villa",
-    location: "Premium Estate, Chennai",
-    category: "Residential",
+    alt: "Premium hybrid solar deployment",
+    name: "Premium Hybrid Plant",
+    location: "Nilambur Estate, Malappuram",
+    category: "Hybrid Solar",
     heading: "Power Your\nPremium Space.",
-    sub: "High-efficiency monocrystalline arrays delivering continuous clean power for commercial and premium properties.",
-    specs: { panels: "24 Panels", output: "450W", storage: "15 kWh", savings: "₹2.4L/yr" },
+    sub: "High-efficiency customized solar energy plants delivering absolute off-grid independence and seamless load routing.",
+    specs: { panels: "32 Panels", output: "550W", storage: "20 kWh", savings: "₹2.8L/yr" },
     rating: 4.9,
-    desc: "This installation seamlessly blends into the estate environment, offering zero-grid independence. The architectural design makes it a perfect luxury addition."
+    desc: "This structural installation integrates beautifully into the estate architecture, using smart automation for zero-grid dependency."
   },
   {
     src: "/images/rooftop_solar.png",
-    alt: "Premium rooftop solar array",
-    name: "Rooftop Solar Array",
-    location: "Skyline Tower, Bangalore",
-    category: "Commercial",
+    alt: "High-yield commercial ongrid array",
+    name: "High-Yield Ongrid Array",
+    location: "Commercial Center, Kozhikode",
+    category: "Ongrid Solar",
     heading: "New Era Of\nClean Energy.",
-    sub: "Discover bespoke solar systems designed for luxury estates — where clean energy meets architectural elegance.",
-    specs: { panels: "48 Panels", output: "415W", storage: "30 kWh", savings: "₹5.1L/yr" },
+    sub: "Discover advanced utility synchronized ongrid systems configured to slash running commercial operational overheads.",
+    specs: { panels: "64 Panels", output: "550W", storage: "—", savings: "₹5.9L/yr" },
     rating: 4.8,
-    desc: "A state-of-the-art commercial installation maximising roof space, providing full energy independence with intelligent monitoring."
+    desc: "A high-capacity commercial rooftop project maximizing corporate solar yields with complete KSEB net-metering compliance."
   },
   {
     src: "/images/smart_battery_vault.png",
-    alt: "Smart battery storage vault",
-    name: "Smart Energy Vault",
-    location: "Green District, Hyderabad",
-    category: "Storage",
+    alt: "Lithium iron phosphate storage vault",
+    name: "Lithium Storage Vault",
+    location: "Residential Grid, Kochi",
+    category: "Lithium Battery",
     heading: "Store the Sun,\nOn Your Terms.",
-    sub: "Decentralised smart battery systems that ensure your estate stays fully powered around the clock.",
-    specs: { panels: "—", output: "20 kW", storage: "48 kWh", savings: "₹3.2L/yr" },
+    sub: "Next-generation heavy-duty lithium storage blocks paired with our proprietary pure sine wave inverter ecosystems.",
+    specs: { panels: "16 Panels", output: "450W", storage: "15 kWh", savings: "₹1.9L/yr" },
     rating: 4.9,
-    desc: "Our flagship battery vault delivers 48 hours of backup power with AI-powered load balancing, built for premium estates."
+    desc: "Engineered with an smart BMS layer, our storage vaults ensure smooth microsecond failover during regional power dropouts."
   }
 ];
 
 const LEFT_SIDEBAR = [
-  { icon: Sun,        label: "Light Mode",  action: "light" },
-  { icon: Moon,       label: "Dark Mode",   action: "dark" },
-  { icon: Home,       label: "Home",        href: "/" },
-  { icon: LayoutGrid, label: "Services",    href: "/services" },
-  { icon: Phone,      label: "Contact",     href: "/contact" },
+  { icon: Sun,         label: "Light Mode",  action: "light" },
+  { icon: Moon,        label: "Dark Mode",   action: "dark" },
+  { icon: Home,        label: "Home",        href: "/" },
+  { icon: LayoutGrid,  label: "Services",    href: "/services" },
+  { icon: Phone,       label: "Contact",     href: "/contact" },
 ];
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -107,7 +107,6 @@ export default function Hero() {
 
   const slide = SLIDES[active];
 
-  // Glassmorphism classes based on theme
   const glassStrong = isDark
     ? "bg-[#111827]/80 backdrop-blur-xl border-white/10"
     : "bg-white/90 backdrop-blur-xl border-white/70";
@@ -115,7 +114,7 @@ export default function Hero() {
   return (
     <section className="relative w-full h-screen min-h-[680px] overflow-hidden" aria-label="Hero">
 
-      {/* ── Full-screen background slideshow ── */}
+      {/* Full-screen background slideshow */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence initial={false}>
           <motion.div key={active + "-bg"} className="absolute inset-0"
@@ -127,12 +126,11 @@ export default function Hero() {
             <Image src={slide.src} alt={slide.alt} fill priority className="object-cover" sizes="100vw" />
           </motion.div>
         </AnimatePresence>
-        {/* Subtle vignette */}
         <div className={`absolute inset-0 transition-colors duration-700 ${isDark ? "bg-black/40" : "bg-black/20"}`} />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
       </div>
 
-      {/* ════════ LEFT ICON SIDEBAR ════════ */}
+      {/* LEFT ICON SIDEBAR */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -184,15 +182,13 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* ════════ MAIN HEADING ════════ */}
+      {/* MAIN HEADING */}
       <div className="absolute inset-0 z-20 flex flex-col justify-center pb-32 px-6 md:px-24 lg:px-[120px] max-w-5xl pointer-events-none">
         <AnimatePresence mode="wait">
-          {/* Tightly grouped heading lines */}
           <motion.div key={active + "-heading"} className="flex flex-col pt-4">
             {slide.heading.split("\n").map((line, i) => (
               <div 
                 key={i} 
-                // Negative top margin physically pulls the bottom line into the top line
                 className={`overflow-hidden py-1.5 ${i > 0 ? "-mt-2 md:-mt-4" : ""}`}
               >
                 <motion.h1
@@ -200,7 +196,6 @@ export default function Hero() {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: "-100%", opacity: 0 }}
                   transition={{ duration: 0.65, delay: i * 0.1, ease: EASE }}
-                  // leading-[0.85] aggressively crushes the line height
                   className="font-heading font-extrabold text-white leading-[0.85] tracking-tighter drop-shadow-2xl"
                   style={{ fontSize: "clamp(3rem, 7.5vw, 6.5rem)" }}
                 >
@@ -237,33 +232,31 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* ════════ STAT CARD (Centered Mobile, Left-Aligned Desktop) ════════ */}
+      {/* STAT CARD */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.4, ease: EASE }}
-        // Centers on mobile (left-0 right-0 mx-auto), Aligns left on md/lg to match text (md:mx-0 md:left-24 lg:left-[120px])
         className={`absolute bottom-6 md:bottom-10 left-0 right-0 mx-auto md:mx-0 md:right-auto md:left-24 lg:left-[120px] z-30 border rounded-[2rem] p-5 shadow-2xl w-[90%] max-w-[320px] ${glassStrong}`}
       >
         <p className={`text-[11px] font-heading font-bold uppercase tracking-wide mb-1.5 ${isDark ? "text-white" : "text-[#1a1a2e]"}`}>
-          Find Your Solar Solution
+          Invest Once. Save For Years.
         </p>
         <p className={`text-[10px] leading-relaxed mb-4 ${isDark ? "text-white/60" : "text-gray-500"}`}>
-          Our team connects you with premium solar installations in the most sought-after locations.
+          Delivering reliable, customized clean energy infrastructure across households and commercial environments.
         </p>
 
         <div className="flex items-center justify-between">
           <div>
-            <p className={`text-2.5xl font-heading font-extrabold leading-none ${isDark ? "text-white" : "text-[#1a1a2e]"}`}>500+</p>
-            <p className={`text-[9px] font-mono tracking-widest uppercase mt-1 ${isDark ? "text-white/50" : "text-gray-400"}`}>Installations</p>
+            <p className={`text-2.5xl font-heading font-extrabold leading-none ${isDark ? "text-white" : "text-[#1a1a2e]"}`}>2000+</p>
+            <p className={`text-[9px] font-mono tracking-widest uppercase mt-1 ${isDark ? "text-white/50" : "text-gray-400"}`}>Live Solutions</p>
           </div>
 
-          {/* Avatar cluster */}
           <div className="flex items-center">
             <div className="flex -space-x-2">
               {["#E30613", "#1a1a2e", "#FF6B6B"].map((bg, i) => (
                 <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-[#111827] flex items-center justify-center text-[9px] font-bold text-white z-10" style={{ backgroundColor: bg }}>
-                  {["S", "B", "A"][i]}
+                  {["B", "T", "S"][i]}
                 </div>
               ))}
             </div>
@@ -282,7 +275,7 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* ════════ RIGHT DETAIL CARD (Hidden on Mobile) ════════ */}
+      {/* RIGHT DETAIL CARD */}
       <div className="absolute bottom-10 right-6 lg:right-10 z-30 w-[280px] hidden xl:block">
         <AnimatePresence mode="wait">
           <motion.div
@@ -293,7 +286,6 @@ export default function Hero() {
             transition={{ duration: 0.55, ease: EASE }}
             className={`border rounded-[2rem] p-5 shadow-2xl ${glassStrong}`}
           >
-            {/* Card header */}
             <div className="flex items-start justify-between mb-3">
               <div>
                 <p className={`text-[10px] font-mono tracking-[0.15em] text-[#E30613] uppercase font-bold mb-1.5`}>
@@ -303,23 +295,20 @@ export default function Hero() {
                   {slide.name}
                 </p>
               </div>
-              <button className="w-9 h-9 rounded-full bg-[#E30613] flex items-center justify-center shadow-md shadow-[#E30613]/30 shrink-0 transition-transform hover:scale-105">
+              <Link href="/services" className="w-9 h-9 rounded-full bg-[#E30613] flex items-center justify-center shadow-md shadow-[#E30613]/30 shrink-0 transition-transform hover:scale-105">
                 <ArrowUpRight size={14} className="text-white" />
-              </button>
+              </Link>
             </div>
 
-            {/* Location */}
             <div className={`flex items-center gap-1.5 mb-3 ${isDark ? "text-white/60" : "text-gray-500"}`}>
               <MapPin size={11} className="text-[#E30613]" />
               <span className="text-[10px] font-mono">{slide.location}</span>
             </div>
 
-            {/* Description */}
             <p className={`text-[11px] leading-relaxed mb-5 ${isDark ? "text-white/60" : "text-gray-500"}`}>
               {slide.desc}
             </p>
 
-            {/* Specs row */}
             <div className={`grid grid-cols-2 gap-2 rounded-2xl p-3.5 mb-5 ${isDark ? "bg-white/5" : "bg-[#f4f7fa]"}`}>
               {Object.entries(slide.specs).map(([key, val]) => (
                 <div key={key} className="text-center">
@@ -331,7 +320,6 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* Action icons */}
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5">
                 <Star size={12} className="text-[#ECA468] fill-[#ECA468]" />

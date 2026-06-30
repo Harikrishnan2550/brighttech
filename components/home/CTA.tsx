@@ -102,7 +102,8 @@ export default function CTA() {
 
           <h2 className="text-4xl sm:text-5xl font-heading font-extrabold tracking-tight text-[#1A1816] dark:text-white leading-tight">
             Ready to Power Your Future <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B5050C] via-[#E30613] to-[#B5050C] dark:from-[#E30613] dark:via-[#FFA3A3] dark:to-[#E30613] italic font-heading font-normal">With Clean Energy?</span>
+            {/* Added pr-2 to fix the browser clipping bug on italicized text inside clip-text vectors */}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B5050C] via-[#E30613] to-[#B5050C] dark:from-[#E30613] dark:via-[#FFA3A3] dark:to-[#E30613] italic font-heading font-normal pr-2">With Clean Energy?</span>
           </h2>
 
           <p className="max-w-xl mx-auto text-gray-600 dark:text-white/70 font-sans font-light text-sm sm:text-base leading-relaxed">
@@ -113,7 +114,7 @@ export default function CTA() {
         {/* Contact and Battery Layout Grid */}
         <div className="grid lg:grid-cols-12 gap-12 sm:gap-16 items-stretch">
           
-          {/* Left Column: Interactive Contact Form (7 columns) */}
+          {/* Left Column: Interactive Contact Form */}
           <div className="lg:col-span-7 flex flex-col justify-between">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
@@ -191,7 +192,7 @@ export default function CTA() {
             </motion.div>
           </div>
 
-          {/* Right Column: Premium Battery Vault Card (5 columns) */}
+          {/* Right Column: Premium Battery Vault Card */}
           <div className="lg:col-span-5 flex items-stretch">
             <motion.div 
               initial={{ opacity: 0, x: 30 }}
@@ -209,11 +210,10 @@ export default function CTA() {
                   className="object-cover group-hover:scale-103 transition-transform duration-700 opacity-60 dark:opacity-50"
                   sizes="(max-w-768px) 100vw, 30vw"
                 />
-                {/* Overlay shadow mask */}
                 <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#080612] via-transparent to-black/40 z-1" />
               </div>
 
-              {/* Glowing connection node at the top left where the wire connects */}
+              {/* Glowing connection node */}
               <div className="absolute top-4 left-4 flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-lg z-2">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E30613] dark:bg-[#FF3B30] opacity-75"></span>
@@ -235,7 +235,6 @@ export default function CTA() {
 
               {/* Animated Glowing LED Charging Bars */}
               <div className="relative z-10 space-y-4">
-                
                 <div className="bg-black/60 backdrop-blur-lg border border-white/10 p-5 rounded-2xl space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-[9px] font-heading font-extrabold uppercase tracking-widest text-white/70">Storage Level</span>
@@ -274,7 +273,6 @@ export default function CTA() {
                     <span className="flex items-center gap-1"><Zap size={8} /> Net-Zero</span>
                   </div>
                 </div>
-
               </div>
 
             </motion.div>

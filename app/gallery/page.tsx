@@ -73,7 +73,6 @@ export default function GalleryPage() {
     try {
       const res = await api.get("/gallery");
       if (res.data && res.data.gallery && res.data.gallery.length > 0) {
-        // Map backend path prefix to full url if needed
         const mapped = res.data.gallery.map((item: any) => ({
           ...item,
           image: item.image.startsWith("http") ? item.image : `http://localhost:5000${item.image}`,
@@ -93,48 +92,50 @@ export default function GalleryPage() {
     : gallery.filter((item) => item.category.toLowerCase() === selectedCategory.toLowerCase());
 
   return (
-    <main className="min-h-screen bg-transparent pt-28 sm:pt-36 pb-20 relative overflow-hidden text-gray-900 dark:text-white">
+    <main className="min-h-screen bg-transparent pb-20 overflow-hidden text-gray-900 dark:text-white">
       {/* Background radial overlays */}
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-orange/5 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-brand-red/5 blur-[100px] pointer-events-none" />
 
-      {/* Hero Banner Section */}
+      {/* ── FULL-WIDTH TOP HERO BANNER (REDUCED HEIGHT & CENTERED CONTENT) ── */}
       <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-7xl mx-auto px-6 mb-16"
+        className="w-full relative h-[350px] md:h-[420px] overflow-hidden bg-black rounded-b-[3rem] md:rounded-b-[6rem]"
       >
-        <section className="relative h-[240px] sm:h-[300px] rounded-[2rem] overflow-hidden border border-gray-200 dark:border-white/5 shadow-md">
-          {/* Background Image Banner */}
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/gallery2.jpg"
-              alt="Gallery banner"
-              fill
-              priority
-              className="object-cover"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-black/55 dark:bg-black/65" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-          </div>
+        {/* Full-width Background Image Canvas */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/gallery2.jpg"
+            alt="Gallery banner"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+          {/* Layered dark gradients for maximum typography contrast */}
+          <div className="absolute inset-0 bg-black/45 dark:bg-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60 z-1" />
+        </div>
 
-          <div className="relative z-10 w-full h-full flex flex-col justify-end p-8 sm:p-12 space-y-3 text-white">
-            <span className="text-xs font-bold tracking-widest uppercase text-brand-orange block w-fit">
-              Portfolio
-            </span>
-            <h1 className="text-4xl sm:text-5xl font-bold font-heading text-white tracking-tight">
-              Projects <span className="text-brand-orange">Gallery</span>
+        {/* Center-Aligned Content Wrapper */}
+        <div className="absolute inset-0 z-10 w-full h-full flex flex-col justify-center items-center pt-16">
+          <div className="max-w-3xl w-full mx-auto px-6 text-center space-y-4 text-white flex flex-col items-center">
+            
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold font-heading text-white tracking-tighter leading-none">
+              Projects <span className="text-brand-orange italic font-normal">Gallery</span>
             </h1>
-            <p className="max-w-2xl text-white/80 font-light text-xs sm:text-sm leading-relaxed">
+            
+            <p className="max-w-xl text-white/95 font-sans font-light text-xs sm:text-sm md:text-base leading-relaxed drop-shadow-md mx-auto">
               Explore our completed rooftop setups, hybrid systems, and commercial integrations.
             </p>
           </div>
-        </section>
+        </div>
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      {/* ── CORE PAGE PORTFOLIO CONTENT ── */}
+      <div className="max-w-7xl mx-auto px-6 relative z-10 pt-20">
 
         {/* Category Filters */}
         <motion.div 
@@ -208,8 +209,8 @@ export default function GalleryPage() {
 
         {filteredGallery.length === 0 && (
           <div className="py-20 text-center space-y-4">
-            <ImageIcon size={48} className="text-gray-650 mx-auto" />
-            <p className="text-gray-650 dark:text-gray-400">No projects found in this category.</p>
+            <ImageIcon size={48} className="text-gray-600 dark:text-gray-400 mx-auto" />
+            <p className="text-gray-600 dark:text-gray-400">No projects found in this category.</p>
           </div>
         )}
 

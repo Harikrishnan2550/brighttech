@@ -8,27 +8,27 @@ import { motion } from "framer-motion";
 const SERVICES = [
   {
     num: "01",
-    title: "Solar Installation",
+    title: "On-Grid & Off-Grid Solar Plants",
     tag: "High-Yield Photovoltaics",
-    desc: "Custom engineered solar panel installations for premium residences, corporate complexes, and megawatt utility farms. We handle civil structures, layout design, and net-metering grid syncing.",
+    desc: "Custom engineered alternative power integrations designed for residential complexes, industrial locations, and estates. Complete with structure layout scoping and full KSEB net-metering approvals management.",
     icon: <Sun className="w-5 h-5 text-[#B5050C] dark:text-[#FF3B30]" />,
     image: "/images/gallery1.jpg",
     alignment: "left"
   },
   {
     num: "02",
-    title: "Battery Storage System",
-    tag: "Decentralized Energy",
-    desc: "Integrate lithium cell storage configurations to secure continuous energy loops. Protect operations against utility dropouts and discharge stored solar power when tariffs peak.",
+    title: "Advanced Lithium Storage Labs",
+    tag: "Decentralised Energy Networks",
+    desc: "Integrate high-density lithium cell storage frameworks to manage uninterrupted energy flow. Fully configured to shave structural overheads during peak utility hours and counter grid power dropouts.",
     icon: <BatteryCharging className="w-5 h-5 text-[#B5050C] dark:text-[#FF3B30]" />,
     image: "/images/gallery4.jpg",
     alignment: "right"
   },
   {
     num: "03",
-    title: "Maintenance & AMC Support",
-    tag: "Asset Optimization",
-    desc: "Maintain your yield with automated cleaning plans, inverter diagnosis, and photothermic checkups. Fully covered by our structured annual maintenance contracts.",
+    title: "Inhouse Inverters & UPS Lines",
+    tag: "Proprietary Power Hardware",
+    desc: "We engineer and maintain our own premium pure sine wave inverters and heavy-duty UPS options under the trusted EDIX and XL PLUS brand setups, ensuring seamless macrosecond response times and long warranty protection.",
     icon: <Wrench className="w-5 h-5 text-[#B5050C] dark:text-[#FF3B30]" />,
     image: "/images/about.jpg",
     alignment: "left"
@@ -45,13 +45,13 @@ export default function ServicesPreview() {
         {/* Section Header */}
         <div className="max-w-3xl space-y-4 mb-24">
           <span className="text-xs font-heading font-bold tracking-widest uppercase text-[#B5050C] dark:text-[#E30613] block">
-            Core Competence
+            Core Solutions Ecosystem
           </span>
           <h2 className="text-4xl sm:text-5xl font-heading font-extrabold tracking-tight text-[#1A1816] dark:text-white leading-tight">
-            Our Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B5050C] to-[#E30613] dark:from-[#FF3B30] dark:to-[#910208] italic font-heading font-normal">Solar Services</span>
+            Our Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B5050C] to-[#E30613] dark:from-[#FF3B30] dark:to-[#910208] italic font-heading font-normal">Solar Suites</span>
           </h2>
           <p className="text-gray-600 dark:text-white/70 font-sans font-light text-base sm:text-lg">
-            We provide clean energy transitions through advanced design, precision engineering, and ongoing support.
+            Providing tailored transitions into clean energy frameworks through structural master planning, precision engineering, and ongoing lifecycle protection.
           </p>
         </div>
 
@@ -83,7 +83,6 @@ export default function ServicesPreview() {
                   />
                   <div className="absolute inset-0 bg-black/[0.02] group-hover:bg-transparent transition-colors duration-300" />
                   
-                  {/* Visual numbering decal */}
                   <div className="absolute top-6 left-6 w-12 h-12 premium-glass backdrop-blur-md rounded-full flex items-center justify-center font-heading font-extrabold text-[#E30613] dark:text-[#FF3B30] text-lg border shadow-md">
                     {service.num}
                   </div>
@@ -115,7 +114,7 @@ export default function ServicesPreview() {
                       href="/services"
                       className="inline-flex items-center gap-2.5 text-xs font-heading font-bold uppercase tracking-[0.2em] text-[#1A1816] dark:text-white hover:text-[#B5050C] dark:hover:text-[#E30613] transition-all group relative pb-1.5"
                     >
-                      <span>Explore Service</span>
+                      <span>Explore Suite</span>
                       <ArrowUpRight size={14} className="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[#B5050C] dark:text-[#E30613]" />
                       <span className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-[#B5050C] to-[#E30613] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
                     </Link>
@@ -132,7 +131,7 @@ export default function ServicesPreview() {
             href="/services"
             className="inline-flex items-center gap-2 text-xs font-heading font-bold uppercase tracking-widest text-[#1A1816] dark:text-white group bg-[#1A1816]/5 dark:bg-white/5 border border-gray-200 dark:border-brand-red/10 hover:border-[#1A1816] dark:hover:border-white hover:bg-[#1A1816] dark:hover:bg-white hover:text-white dark:hover:text-[#1A1816] px-8 py-4 rounded-xl transition-all duration-300"
           >
-            View All Services
+            View All Services Suite
             <ArrowRight size={14} className="text-[#B5050C] group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

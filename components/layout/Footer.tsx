@@ -14,19 +14,19 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3 group">
-              <Sun size={20} className="text-[#1A1816] dark:text-white animate-spin-slow" />
-              <span className="text-lg font-bold tracking-wider text-[#1A1816] dark:text-white uppercase font-heading">
-                Solaris
+              <Sun size={22} className="text-brand-orange animate-spin-slow shrink-0" />
+              <span className="text-base font-extrabold tracking-wider text-[#1A1816] dark:text-white uppercase font-heading">
+                Brighttech Solar
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-gray-500 dark:text-white/70 font-light">
-              Powering homes, businesses, and industries across India with high-efficiency next-generation solar energy systems. Est. 2010.
+              Bright Tech Group of Technologies handles premium customized renewable alternative installations, commercial grids, and high-efficiency smart storage systems. Invest once. Save for years.
             </p>
             <div className="flex items-center gap-3 pt-2">
               {[
                 { icon: <Facebook size={18} />, href: "#" },
                 { icon: <Twitter size={18} />, href: "#" },
-                { icon: <Instagram size={18} />, href: "#" },
+                { icon: <Instagram size={18} />, href: "#" }, // Fixed: Swapped Compass back to already-imported Instagram
                 { icon: <Linkedin size={18} />, href: "#" },
               ].map((social, index) => (
                 <a
@@ -56,9 +56,9 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="hover:text-[#1A1816] dark:hover:text-white transition-colors duration-200 flex items-center gap-1.5 group text-gray-500 dark:text-white/70"
+                    className="hover:text-brand-orange dark:hover:text-brand-orange transition-colors duration-200 flex items-center gap-1.5 group text-gray-500 dark:text-white/70"
                   >
-                    <span className="w-1 h-1 rounded-full bg-[#1A1816] dark:bg-white scale-0 group-hover:scale-100 transition-transform duration-200" />
+                    <span className="w-1 h-1 rounded-full bg-brand-orange scale-0 group-hover:scale-100 transition-transform duration-200" />
                     {link.name}
                   </Link>
                 </li>
@@ -73,50 +73,51 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4 text-sm font-light">
               <li className="flex items-start gap-3.5">
-                <MapPin size={18} className="text-gray-500 dark:text-white/80 shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-brand-orange shrink-0 mt-0.5" />
                 <span className="text-gray-500 dark:text-white/70">
-                  Brighttech Solar Plaza, Suite 402, NH-66 Bypass, Kochi, Kerala, India
+                  Bright Tech Group of Technologies,<br />
+                  Pulamanathole, Malappuram,<br />
+                  Kerala — 679323
                 </span>
               </li>
-              <li className="flex items-center gap-3.5">
-                <Phone size={18} className="text-gray-500 dark:text-white/80 shrink-0" />
-                <a href="tel:+914842500600" className="hover:text-[#1A1816] dark:hover:text-white transition-colors text-gray-500 dark:text-white/70">
-                  +91 484 2500 600
-                </a>
+              <li className="flex flex-col gap-2 font-light">
+                <div className="flex items-center gap-3.5">
+                  <Phone size={18} className="text-brand-orange shrink-0" />
+                  <a href="tel:+914933267222" className="hover:text-brand-orange dark:hover:text-brand-orange transition-colors text-gray-500 dark:text-white/70">
+                    04933 26 72 22
+                  </a>
+                </div>
+                <div className="flex items-center gap-3.5 pl-8">
+                  <a href="tel:+918893889977" className="hover:text-brand-orange dark:hover:text-brand-orange transition-colors text-gray-500 dark:text-white/70 font-semibold">
+                    8893 88 99 77
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3.5">
-                <Mail size={18} className="text-gray-500 dark:text-white/80 shrink-0" />
-                <a href="mailto:info@brighttechsolar.com" className="hover:text-[#1A1816] dark:hover:text-white transition-colors text-gray-500 dark:text-white/70">
-                  info@brighttechsolar.com
+                <Mail size={18} className="text-brand-orange shrink-0" />
+                <a href="mailto:brighttechpower@gmail.com" className="hover:text-brand-orange dark:hover:text-brand-orange transition-colors text-gray-500 dark:text-white/70 break-all text-xs sm:text-sm">
+                  brighttechpower@gmail.com
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter Box */}
+          {/* Information Strip */}
           <div>
             <h4 className="text-xs font-semibold text-gray-800 dark:text-white uppercase tracking-wider mb-6">
-              Stay Updated
+              Our Vision
             </h4>
             <p className="text-sm text-gray-500 dark:text-white/70 mb-4 leading-relaxed font-light">
-              Subscribe to receive updates on solar technology, energy savings, and recent projects.
+              Your Roof, Your Power Plant. Providing seamless grid synchronisations alongside premium component structures across households and industrial zones.
             </p>
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
-              <div className="relative">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="w-full bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/10 text-gray-800 dark:text-white text-sm rounded-xl py-3 px-4 outline-none focus:border-[#1A1816] dark:focus:border-white focus:bg-white/10 dark:focus:bg-white/15 transition-all placeholder:text-gray-400 dark:placeholder:text-white/40"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-[#1A1816] dark:bg-white text-white dark:text-[#1A1816] py-3 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-[#1A1816]/90 dark:hover:bg-white/90 active:scale-98 transition-all cursor-pointer"
-              >
-                Subscribe
-              </button>
-            </form>
+            <div className="p-4 rounded-xl border border-dashed border-gray-200 dark:border-white/10 bg-gray-100/50 dark:bg-white/5 text-center">
+              <span className="text-xs uppercase font-bold tracking-wider text-brand-orange block">
+                Brands Ecosystem
+              </span>
+              <span className="text-xs text-gray-500 dark:text-white/60 font-light mt-1 block">
+                EDIX &bull; XL PLUS
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -133,15 +134,15 @@ export default function Footer() {
                 href="https://winshineinfotech.com/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="hover:text-[#1A1816] dark:hover:text-white transition-colors font-medium underline decoration-dotted whitespace-nowrap"
+                className="hover:text-brand-orange dark:hover:text-white transition-colors font-medium underline decoration-dotted whitespace-nowrap"
               >
                 winshine infotech
               </a>
             </span>
           </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-[#1A1816] dark:hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-[#1A1816] dark:hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-brand-orange dark:hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-brand-orange dark:hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

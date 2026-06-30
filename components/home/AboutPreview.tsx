@@ -9,35 +9,35 @@ import { motion, AnimatePresence, useInView, animate, Variants } from "framer-mo
 const HOTSPOTS = [
   {
     id: "panels",
-    label: "PV Solar Shield",
+    label: "PV Solar Matrix",
     icon: <Sun className="w-5 h-5" />,
     percent: 98.6,
-    title: "High-Yield Photovoltaics",
-    desc: "Tier-1 monocrystalline panels built with low-light passivated emitter rear cell (PERC) technology. Converts maximum sunlight into clean DC current.",
+    title: "High-Yield Passivated PERC",
+    desc: "Tier-1 monocrystalline cells built with specialized low-light alignment properties. Captures optimized atmospheric irradiation to scale baseline conversion output.",
     image: "/images/gallery3.jpg",
-    stats: "22.8% Cell Efficiency",
+    stats: "22.8% Energy Conversion",
     coords: { x: 50, y: 20 }
   },
   {
     id: "inverter",
-    label: "Smart Inverter Core",
+    label: "Pure Sine Wave Core",
     icon: <Settings className="w-5 h-5" />,
     percent: 99.2,
-    title: "Dual Hybrid Power Routing",
-    desc: "Intelligent grid-sync inverter that auto-routes current between home loads, battery storage, and the state electrical grid.",
+    title: "Proprietary Routing Inverters",
+    desc: "Bespoke engineering ecosystems built under our trusted EDIX and XL PLUS brands. Safely balances current loops between infrastructure, storage, and the KSEB network.",
     image: "/images/gallery2.jpg",
-    stats: "0.2ms Cutover Speed",
+    stats: "Pure Sine Wave Output",
     coords: { x: 50, y: 50 }
   },
   {
     id: "battery",
-    label: "Storage Vault",
+    label: "LFP Storage Matrix",
     icon: <Battery className="w-5 h-5" />,
     percent: 100,
-    title: "Smart Battery Storage",
-    desc: "Long-lifespan Lithium Iron Phosphate (LiFePO4) storage block. Stores daylight surplus to power your night loads and blackouts.",
+    title: "Smart Lithium Banks",
+    desc: "Extended lifestyle Lithium Iron Phosphate (LiFePO4) storage architecture. Retains day surplus safely to power runtime requirements during high-tariff peak brackets.",
     image: "/images/gallery4.jpg",
-    stats: "15 kWh Base Module",
+    stats: "Modular Lithium Backup",
     coords: { x: 28, y: 78 }
   }
 ];
@@ -107,7 +107,7 @@ export default function AboutPreview() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-16 lg:gap-20 items-center">
         
-        {/* Left Column: Interactive Solar Lab Schematic (5 Columns) */}
+        {/* Left Column: Interactive Solar Lab Schematic */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95, x: -35 }}
           whileInView={{ opacity: 1, scale: 1, x: 0 }}
@@ -117,14 +117,11 @@ export default function AboutPreview() {
         >
           <div className="text-center w-full mb-6">
             <span className="text-[10px] font-heading font-extrabold uppercase tracking-widest text-[#B5050C] dark:text-[#E30613] bg-[#B5050C]/10 dark:bg-white/10 px-4 py-2 rounded-full border border-[#B5050C]/15 dark:border-brand-red/10 shadow-sm">
-              Interactive Solar Blueprint
+              Interactive System Architecture
             </span>
           </div>
 
-          {/* Interactive SVG Lab Container */}
           <div className="relative w-full aspect-square max-w-[420px] rounded-3xl p-8 flex items-center justify-center border premium-glass">
-            
-            {/* SVG House Outline Blueprint with architectural draft grid paper */}
             <svg viewBox="0 0 100 100" className="w-full h-full text-gray-200 dark:text-white/40 stroke-current fill-none stroke-[0.6]">
               <defs>
                 <pattern id="blueprintGrid" width="10" height="10" patternUnits="userSpaceOnUse">
@@ -133,26 +130,16 @@ export default function AboutPreview() {
               </defs>
               <rect width="100" height="100" fill="url(#blueprintGrid)" className="text-gray-100 dark:text-brand-red/[0.03] transition-colors" />
 
-              {/* House Roof Panel outline */}
               <polygon points="50,12 88,40 12,40" />
               <line x1="28" y1="26" x2="72" y2="26" strokeDasharray="2 2" />
-              
-              {/* House Walls outline */}
               <rect x="20" y="40" width="60" height="48" rx="2" />
-              
-              {/* Inverter Box outline */}
               <rect x="42" y="46" width="16" height="12" rx="1" />
               <circle cx="50" cy="52" r="3" />
-
-              {/* Battery Box outline */}
               <rect x="22" y="70" width="12" height="15" rx="1" />
               <line x1="25" y1="74" x2="31" y2="74" />
               <line x1="25" y1="78" x2="31" y2="78" />
-
-              {/* Grid Connection Line */}
               <path d="M50,58 L50,94 L90,94" strokeDasharray="3 3" />
 
-              {/* Energy Flow Animation path */}
               <motion.path
                 d="M50,20 L50,46"
                 stroke={isDarkTheme ? "#FF3B30" : "#E30613"}
@@ -171,7 +158,6 @@ export default function AboutPreview() {
               />
             </svg>
 
-            {/* Clickable Hotspot Pins */}
             {HOTSPOTS.map((spot) => {
               const isActive = activeTab === spot.id;
               return (
@@ -189,15 +175,11 @@ export default function AboutPreview() {
                   }`}>
                     {spot.icon}
                   </div>
-                  
-                  {/* Ripple pulse ring */}
                   <span className={`absolute -inset-2 rounded-full border pointer-events-none transition-all ${
                     isActive 
                       ? (isDarkTheme ? "border-[#FF3B30]/40 scale-100 animate-ping" : "border-[#E30613]/40 scale-100 animate-ping") 
                       : "border-transparent scale-0"
                   }`} />
-
-                  {/* Tooltip on hover */}
                   <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-[#1A1816] dark:bg-white text-white dark:text-[#1A1816] text-[9px] uppercase tracking-widest font-semibold px-2.5 py-1.5 rounded shadow-lg pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-30 font-sans">
                     {spot.label}
                   </div>
@@ -207,7 +189,7 @@ export default function AboutPreview() {
           </div>
         </motion.div>
 
-        {/* Right Column: Editorial Information (7 Columns) */}
+        {/* Right Column: Editorial Information */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -215,16 +197,15 @@ export default function AboutPreview() {
           viewport={{ once: true, margin: "-100px" }}
           className="lg:col-span-7 space-y-8 flex flex-col justify-center"
         >
-          
           <motion.div variants={itemVariants} className="space-y-4">
             <span className="text-xs font-heading font-bold tracking-widest uppercase text-[#B5050C] dark:text-[#E30613] block">
-              About Solaris Tech
+              About Brighttech Solar
             </span>
             <h2 className="text-4xl sm:text-5xl font-heading font-extrabold tracking-tight text-[#1A1816] dark:text-white leading-tight">
-              Leading Next-Gen <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B5050C] to-[#E30613] italic font-heading font-normal">Solar Energy</span> Solutions
+              Pioneering Smart <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B5050C] to-[#E30613] italic font-heading font-normal">Energy Ecosystems</span> Across Kerala
             </h2>
             <p className="text-gray-600 dark:text-white/70 font-sans font-light text-base leading-relaxed">
-              We design integrated solar environments where generating, distributing, and storing power works as a unified smart ecosystem. Inspect our system blueprint components.
+              We design premium high-performance solar architecture where generation, smart invertor conversion, and structural lithium storage operate as a singular unified plant. Select our schematic components to review technical features.
             </p>
           </motion.div>
 
@@ -255,7 +236,6 @@ export default function AboutPreview() {
                   </p>
                 </div>
 
-                {/* Sub-image preview */}
                 <div className="sm:col-span-4 relative aspect-square rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 shadow-md">
                   <Image
                     src={activeSpot.image}
@@ -272,20 +252,19 @@ export default function AboutPreview() {
           {/* Numeric highlight stats strip */}
           <motion.div variants={itemVariants} className="pt-6 grid grid-cols-3 gap-6 border-t border-gray-200 dark:border-white/10">
             <div>
-              <Counter value={15} suffix="+" />
-              <p className="text-[10px] uppercase font-heading font-bold tracking-widest text-gray-400 dark:text-white/40 mt-1">Years Support</p>
+              <Counter value={16} suffix="+" />
+              <p className="text-[10px] uppercase font-heading font-bold tracking-widest text-gray-400 dark:text-white/40 mt-1">Years Operations</p>
             </div>
             <div>
-              <Counter value={500} suffix="+" />
-              <p className="text-[10px] uppercase font-heading font-bold tracking-widest text-gray-400 dark:text-white/40 mt-1">System Installs</p>
+              <Counter value={2000} suffix="+" />
+              <p className="text-[10px] uppercase font-heading font-bold tracking-widest text-gray-400 dark:text-white/40 mt-1">Kerala Installs</p>
             </div>
             <div>
-              <Counter value={40} suffix=" MW" />
-              <p className="text-[10px] uppercase font-heading font-bold tracking-widest text-gray-400 dark:text-white/40 mt-1">Power Yielded</p>
+              <Counter value={45} suffix=" MW" />
+              <p className="text-[10px] uppercase font-heading font-bold tracking-widest text-gray-400 dark:text-white/40 mt-1">Clean Yield</p>
             </div>
           </motion.div>
 
-          {/* Learn More Button */}
           <motion.div variants={itemVariants} className="pt-2">
             <Link
               href="/about"

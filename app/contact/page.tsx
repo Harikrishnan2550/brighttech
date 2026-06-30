@@ -62,7 +62,7 @@ export default function ContactPage() {
             Contact <span className="text-gradient-accent">Us</span>
           </h1>
           <p className="max-w-2xl text-gray-600 dark:text-gray-400 font-light text-base leading-relaxed">
-            Have questions about solar panel configurations, pricing structures, or warranty returns? Send us a message and our engineers will respond within 24 hours.
+            Have questions about solar panel matrices, KSEB net-metering approvals, or premium inverter options? Send us a message and our engineering team will respond shortly.
           </p>
         </motion.div>
 
@@ -85,7 +85,7 @@ export default function ContactPage() {
               </h2>
 
               {success && (
-                <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-650 dark:text-emerald-400 text-sm">
+                <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-650 dark:text-emerald-400 text-sm font-sans">
                   Your message has been sent successfully! Our team will contact you shortly.
                 </div>
               )}
@@ -97,7 +97,7 @@ export default function ContactPage() {
                     <input
                       type="text"
                       placeholder="John Doe"
-                      className="w-full bg-gray-100/50 dark:bg-white/5 border border-gray-200 dark:border-white/5 text-gray-900 dark:text-white text-sm rounded-xl py-3.5 px-4 outline-none focus:border-brand-orange focus:bg-gray-100 dark:focus:bg-white/10 transition-all"
+                      className="w-full bg-gray-100/50 dark:bg-white/5 border border-gray-200 dark:border-white/5 text-gray-900 dark:text-white text-sm rounded-xl py-3.5 px-4 outline-none focus:border-brand-orange focus:bg-gray-100 dark:focus:bg-white/10 transition-all font-sans"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       required
@@ -108,7 +108,7 @@ export default function ContactPage() {
                     <input
                       type="email"
                       placeholder="john@example.com"
-                      className="w-full bg-gray-100/50 dark:bg-white/5 border border-gray-200 dark:border-white/5 text-gray-900 dark:text-white text-sm rounded-xl py-3.5 px-4 outline-none focus:border-brand-orange focus:bg-gray-100 dark:focus:bg-white/10 transition-all"
+                      className="w-full bg-gray-100/50 dark:bg-white/5 border border-gray-200 dark:border-white/5 text-gray-900 dark:text-white text-sm rounded-xl py-3.5 px-4 outline-none focus:border-brand-orange focus:bg-gray-100 dark:focus:bg-white/10 transition-all font-sans"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       required
@@ -121,18 +121,19 @@ export default function ContactPage() {
                     <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">Phone Number</label>
                     <input
                       type="tel"
-                      placeholder="+91 98765 43210"
-                      className="w-full bg-gray-100/50 dark:bg-white/5 border border-gray-200 dark:border-white/5 text-gray-900 dark:text-white text-sm rounded-xl py-3.5 px-4 outline-none focus:border-brand-orange focus:bg-gray-100 dark:focus:bg-white/10 transition-all"
+                      placeholder="Your number"
+                      className="w-full bg-gray-100/50 dark:bg-white/5 border border-gray-200 dark:border-white/5 text-gray-900 dark:text-white text-sm rounded-xl py-3.5 px-4 outline-none focus:border-brand-orange focus:bg-gray-100 dark:focus:bg-white/10 transition-all font-sans"
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                      required
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">Subject</label>
                     <input
                       type="text"
-                      placeholder="Solar consultation query"
-                      className="w-full bg-gray-100/50 dark:bg-white/5 border border-gray-200 dark:border-white/5 text-gray-900 dark:text-white text-sm rounded-xl py-3.5 px-4 outline-none focus:border-brand-orange focus:bg-gray-100 dark:focus:bg-white/10 transition-all"
+                      placeholder="Solar infrastructure query"
+                      className="w-full bg-gray-100/50 dark:bg-white/5 border border-gray-200 dark:border-white/5 text-gray-900 dark:text-white text-sm rounded-xl py-3.5 px-4 outline-none focus:border-brand-orange focus:bg-gray-100 dark:focus:bg-white/10 transition-all font-sans"
                       value={form.subject}
                       onChange={(e) => setForm({ ...form, subject: e.target.value })}
                       required
@@ -144,8 +145,8 @@ export default function ContactPage() {
                   <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">Your Message</label>
                   <textarea
                     rows={6}
-                    placeholder="Provide details about your project or query..."
-                    className="w-full bg-gray-100/50 dark:bg-white/5 border border-gray-200 dark:border-white/5 text-gray-900 dark:text-white text-sm rounded-xl py-3.5 px-4 outline-none focus:border-brand-orange focus:bg-gray-100 dark:focus:bg-white/10 transition-all resize-none"
+                    placeholder="Provide details about your structural space or load consumption variables..."
+                    className="w-full bg-gray-100/50 dark:bg-white/5 border border-gray-200 dark:border-white/5 text-gray-900 dark:text-white text-sm rounded-xl py-3.5 px-4 outline-none focus:border-brand-orange focus:bg-gray-100 dark:focus:bg-white/10 transition-all resize-none font-sans"
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     required
@@ -179,7 +180,7 @@ export default function ContactPage() {
           >
             <div className="p-8 sm:p-10 rounded-3xl bg-gray-50/50 dark:bg-[#121212]/40 border border-gray-200 dark:border-white/5 space-y-8 shadow-sm dark:shadow-none">
               <h2 className="text-2xl font-bold font-heading text-gray-900 dark:text-white tracking-tight">
-                Corporate Office
+                Headquarters Office
               </h2>
               
               <ul className="space-y-6 text-sm">
@@ -190,8 +191,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Our Address</h3>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-light">
-                      Brighttech Solar Plaza, Suite 402, <br />
-                      NH-66 Bypass, Kochi, Kerala, India
+                      Bright Tech Group of Technologies,<br />
+                      Pulamanathole, Malappuram,<br />
+                      Kerala — 679323
                     </p>
                   </div>
                 </li>
@@ -201,12 +203,15 @@ export default function ContactPage() {
                     <Phone size={18} className="text-brand-orange" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Call Representative</h3>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-light">
-                      <a href="tel:+914842500600" className="hover:text-gray-900 dark:hover:text-white transition-colors">
-                        +91 484 2500 600
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Call Representatives</h3>
+                    <div className="text-gray-600 dark:text-gray-400 leading-relaxed font-light space-y-1">
+                      <a href="tel:+914933267222" className="hover:text-brand-orange transition-colors block">
+                        04933 26 72 22
                       </a>
-                    </p>
+                      <a href="tel:+918893889977" className="hover:text-brand-orange transition-colors block font-semibold text-brand-orange">
+                        8893 88 99 77
+                      </a>
+                    </div>
                   </div>
                 </li>
 
@@ -217,8 +222,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Email Support</h3>
                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-light">
-                      <a href="mailto:info@brighttechsolar.com" className="hover:text-gray-900 dark:hover:text-white transition-colors">
-                        info@brighttechsolar.com
+                      <a href="mailto:brighttechpower@gmail.com" className="hover:text-brand-orange transition-colors break-all">
+                        brighttechpower@gmail.com
                       </a>
                     </p>
                   </div>
