@@ -158,8 +158,9 @@ const Navbar = () => {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          /* Mobile top bar is ALWAYS WHITE to keep the logo perfectly visible */
-          className="pointer-events-auto w-full h-20 flex items-center justify-between rounded-full px-6 shadow-lg bg-white border border-black/5"
+          /* Mobile top bar is ALWAYS WHITE, and permanently opted out of forced dark mode to prevent black logo text contrast issues */
+          className="pointer-events-auto w-full h-20 flex items-center justify-between rounded-full px-6 shadow-lg bg-white border border-black/5 text-[#1a1a2e]"
+          style={{ colorScheme: "only light" }}
         >
           {/* Mobile Logo Area */}
           <Link 
@@ -178,10 +179,18 @@ const Navbar = () => {
 
           {/* Right: theme + hamburger */}
           <div className="flex items-center gap-5">
-            <button onClick={toggleTheme} aria-label="Toggle Theme" className="text-gray-500 hover:scale-110 transition-transform">
+            <button 
+              onClick={toggleTheme} 
+              aria-label="Toggle Theme" 
+              className="text-gray-500 hover:text-black hover:scale-110 transition-transform"
+            >
               {isDark ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            <button onClick={() => setIsOpen(!isOpen)} aria-label="Menu" className="text-[#1a1a2e] hover:scale-110 transition-transform">
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              aria-label="Menu" 
+              className="text-[#1a1a2e] hover:scale-110 transition-transform"
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
