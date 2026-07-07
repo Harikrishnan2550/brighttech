@@ -89,7 +89,7 @@ export default function TrustedBrands() {
                 y: -6, 
                 boxShadow: `0 20px 40px -15px ${brand.glowColor}`,
               }}
-              className={`group p-8 rounded-[2rem] border premium-glass transition-all duration-300 flex flex-col justify-between h-[340px] ${brand.color}`}
+              className={`group p-8 rounded-[2rem] border premium-glass transition-all duration-300 flex flex-col justify-between h-[370px] ${brand.color}`}
             >
               <div className="space-y-6">
                 {/* Brand Logo Container */}
@@ -111,10 +111,10 @@ export default function TrustedBrands() {
                 </div>
 
                 {/* Specs bullets */}
-                <ul className="space-y-1.5 pt-1">
+                <ul className="space-y-2 pt-1">
                   {brand.specs.map((spec, sIdx) => (
-                    <li key={sIdx} className="flex items-start gap-2 text-[10px] text-gray-500 dark:text-gray-400 font-sans font-light leading-relaxed">
-                      <ShieldCheck size={12} className="text-[#E30613] dark:text-brand-orange shrink-0 mt-0.5" />
+                    <li key={sIdx} className="flex items-start gap-2 text-xs text-gray-600 dark:text-gray-300 font-sans font-normal leading-relaxed">
+                      <ShieldCheck size={14} className="text-[#E30613] dark:text-brand-orange shrink-0 mt-0.5" />
                       <span>{spec}</span>
                     </li>
                   ))}
