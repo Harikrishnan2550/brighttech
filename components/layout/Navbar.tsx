@@ -70,9 +70,8 @@ const Navbar = () => {
           <div className="absolute left-8 top-6 pointer-events-auto">
             <Link
               href="/"
-              className={`flex items-center transition-all duration-300 rounded-[1.25rem] px-4 py-2 ${
-                isDark ? "bg-white shadow-md" : "bg-transparent hover:scale-105"
-              }`}
+              className="flex items-center transition-all duration-300 rounded-[1.25rem] px-4 py-2 bg-white shadow-md hover:scale-105"
+              style={{ colorScheme: "only light" }}
             >
               <Image 
                 src="/logo2.png" 
