@@ -29,28 +29,28 @@ export default function TrustedBrands() {
       name: "Tata Solar",
       color: "group-hover:border-[#005A9C]/45",
       glowColor: "rgba(0, 90, 156, 0.15)",
-      specs: ["High reliability under low light", "Tier-1 global performance rating", "25-year structural output warranty"],
+      specs: ["High reliability under low light.", "Tier-1 global performance rating.", "30-year structural output warranty."],
       logoPath: "/tata.png"
     },
     {
       name: "Waaree",
       color: "group-hover:border-[#0DB02B]/45",
       glowColor: "rgba(13, 176, 43, 0.15)",
-      specs: ["State-of-the-art half-cut cell technology", "Extremely high module efficiency (up to 22.5%)", "Anti-PID resistive layer protection"],
+      specs: ["State-of-the-art half-cut cell technology.", "Extremely high module efficiency (up to 22.5%).", "Anti-PID resistive layer protection."],
       logoPath: "/waaree.png"
     },
     {
       name: "Adani Solar",
       color: "group-hover:border-[#1F2937]/45",
       glowColor: "rgba(31, 41, 55, 0.15)",
-      specs: ["High wind & heavy snow load resilience", "Bifacial power generation density", "Robust dual-glass encapsulation"],
+      specs: ["High wind & heavy snow load resilience.", "Bifacial power generation density.", "Robust dual-glass encapsulation."],
       logoPath: "/adani.png"
     },
     {
       name: "V-Guard",
       color: "group-hover:border-[#B89047]/45",
       glowColor: "rgba(184, 144, 71, 0.15)",
-      specs: ["High-durability pure sine wave stabilizers", "Advanced thermal protection architecture", "Rapid switchover diagnostic circuits"],
+      specs: ["High-durability pure sine wave stabilizers.", "Advanced thermal protection architecture.", "Rapid switchover diagnostic circuits."],
       logoPath: "/vguard.png"
     }
   ];
